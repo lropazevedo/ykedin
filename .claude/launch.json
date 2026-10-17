@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "ykedin", "runtimeExecutable": "node", "runtimeArgs": ["tools/servidor.js"], "port": 5173 }
+  ]
+}

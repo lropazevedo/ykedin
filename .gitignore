@@ -1,0 +1,18 @@
+# Materiais brutos e de trabalho (ficam só no computador)
+*.mp4
+!site/assets/video/*.mp4
+*.jpg
+*.png
+!site/**/*.jpg
+!site/**/*.png
+*.pdf
+*.zip
+review/
+
+# Credenciais de hospedagem e scripts de publicação
+hostgator.env
+publicar.*
+
+# Ajustes locais do Claude Code (o launch.json sobe)
+.claude/*
+!.claude/launch.json

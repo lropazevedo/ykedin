@@ -1,0 +1,970 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ykedin Sushi · Gastronomia japonesa em Jacobina e Capim Grosso</title>
+<meta name="description" content="Ykedin Sushi: gastronomia japonesa contemporânea em Jacobina e Capim Grosso, Bahia, desde 2016. Peça online ou venha viver esse momento com a gente.">
+<meta name="theme-color" content="#1b1312">
+<link rel="icon" type="image/svg+xml" href="assets/flor.svg">
+<!-- DEPLOY STEP: trocar pelas URLs absolutas do site no ar -->
+<meta property="og:title" content="Ykedin Sushi · Viva esse momento!">
+<meta property="og:description" content="Gastronomia japonesa contemporânea em Jacobina e Capim Grosso, Bahia, desde 2016.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/video/hero-ending.jpg">
+<meta property="og:url" content="https://www.exemplo.com.br/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Noto+Serif:ital,wght@1,400&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#1b1312;
+  --panel:#261b1a;
+  --panel-2:#2f2220;
+  --accent:#BA4C4C;
+  --accent-hover:#c85b5b;
+  --accent-muted:#7a3131;
+  --text-primary:#F5F1EA;
+  --text-secondary:#b8aca2;
+  --line-dark:rgba(245,241,234,.14);
+  --sand:#F5F1EA;
+  --sand-2:#ECE5DA;
+  --ink:#221616;
+  --ink-2:#5a4a45;
+  --line-light:#d9cfc1;
+  --madeira:#B79578;
+  --salvia:#899285;
+  --sakura-ink:#a53f3f;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-io:cubic-bezier(.65,0,.35,1);
+  --navh:76px;
+  --tshadow:0 1px 2px rgba(5,5,10,.95),0 3px 12px rgba(5,5,10,.78),0 10px 44px rgba(5,5,10,.8);
+  --sans:"Manrope",system-ui,sans-serif;
+  --serif:"Noto Serif",Georgia,serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:hidden;overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;overflow-x:hidden;overflow-x:clip;background:var(--canvas);color:var(--text-primary);font-family:var(--sans);font-weight:500;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;animation:pageIn .9s var(--ease-out) both}
+@keyframes pageIn{from{opacity:0}to{opacity:1}}
+img{display:block;max-width:100%}
+a{color:inherit}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:fixed;left:16px;top:-60px;z-index:100;background:var(--accent);color:#fff;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;transition:top .3s var(--ease-out)}
+.skip:focus{top:12px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+em{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;letter-spacing:0}
+.label{font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase}
+.wrap{width:min(1180px,100% - 48px);margin-inline:auto}
+
+/* ambiente fixo: a flor original grande, quase transparente, e um grão */
+.ambient{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.ambient .bigflor{position:absolute;width:min(120vmin,1100px);aspect-ratio:1;right:-28vmin;top:8vh;opacity:.05;animation:spin 160s linear infinite;animation-delay:-40s}
+.ambient .bigflor svg{width:100%;height:100%}
+.ambient .grain{position:absolute;inset:-50%;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:drift 70s steps(10) infinite;animation-delay:-12s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drift{0%{transform:translate(0,0)}50%{transform:translate(-4%,3%)}100%{transform:translate(0,0)}}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;padding:15px 26px;border-radius:999px;font-weight:700;font-size:.95rem;letter-spacing:.02em;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background-color .35s var(--ease-out),border-color .35s var(--ease-out),transform .35s var(--ease-out),color .35s var(--ease-out);text-shadow:none;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(245,241,234,.55);color:var(--text-primary)}
+.btn-ghost:hover{border-color:var(--text-primary);transform:translateY(-2px)}
+.light .btn-ghost{border-color:#8a7a72;color:var(--ink)}
+.light .btn-ghost:hover{border-color:var(--ink)}
+.btn svg{width:18px;height:18px;flex:none}
+@media (pointer:coarse){.btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center}}
+
+/* navegação */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--navh);display:flex;align-items:center;transition:background-color .5s var(--ease-out),box-shadow .5s var(--ease-out)}
+.nav.solid{background:rgba(27,19,18,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line-dark)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav .logo{display:block;width:164px;flex:none}
+.nav .logo img{width:100%;height:auto}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-size:.88rem;font-weight:700;color:var(--text-secondary);transition:color .3s var(--ease-out)}
+.nav ul a:hover{color:var(--text-primary)}
+.nav .btn{padding:11px 20px;font-size:.85rem}
+.nav-actions{display:flex;align-items:center;gap:22px}
+.nav-wa{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:.88rem;font-weight:700;color:var(--text-primary);transition:color .3s var(--ease-out)}
+.nav-wa svg{width:20px;height:20px;color:#9fb39a;flex:none;transition:transform .35s var(--ease-out)}
+.nav-wa:hover svg{transform:scale(1.08)}
+.nav-wa:hover{color:#fff}
+@media (max-width:640px){.nav-wa span{display:none}.nav-wa{width:44px;height:44px;justify-content:center;border:1.5px solid rgba(245,241,234,.35);border-radius:50%}.nav-actions{gap:10px}.nav .logo{width:140px}}
+@media (max-width:1120px){.nav ul{display:none}}
+@media (max-width:420px){.nav .btn{padding:10px 14px;font-size:.8rem}}
+
+/* ============ HERO DE SCRUB ============ */
+.hero{position:relative;height:520vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--canvas)}
+.stage .film{position:absolute;left:50%;bottom:0;width:min(100vw,138.7vh);aspect-ratio:16/9;transform:translateX(-50%)}
+.stage .poster,.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background-size:cover;background-position:center}
+.stage video{opacity:0;transition:opacity .8s var(--ease-out);will-change:transform;transform:translateZ(0)}
+.stage.video-ready video{opacity:1}
+.stage.video-failed video{display:none}
+/* o vídeo sai do escuro: topo e laterais dissolvem na cor da página */
+.stage .film{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 17%,#000 83%,transparent 100%),linear-gradient(to bottom,transparent 0,rgba(0,0,0,.12) 9%,#000 36%,#000 80%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 17%,#000 83%,transparent 100%),linear-gradient(to bottom,transparent 0,rgba(0,0,0,.12) 9%,#000 36%,#000 80%,transparent 100%);mask-composite:intersect}
+.stage .scrim{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 120% 90% at 50% 60%,rgba(10,10,18,0) 40%,rgba(10,10,18,.45) 100%)}
+.band{position:absolute;left:50%;top:calc(var(--navh) + 2.5vh);width:min(94vw,1100px);transform:translateX(-50%);text-align:center;text-shadow:var(--tshadow);opacity:0;visibility:hidden;--k:0}
+.band::before{content:"";position:absolute;inset:-30% -8%;z-index:-1;pointer-events:none;opacity:calc(.25 + .75*var(--k,1));background:radial-gradient(ellipse 60% 60% at 50% 45%,rgba(5,5,10,.62) 0%,rgba(5,5,10,.4) 46%,rgba(5,5,10,0) 76%)}
+.band h1,.band h2{margin:0;font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.005em;line-height:1.14;font-size:clamp(2.3rem,4.4vw,4.1rem);color:#f7f2ec}
+.slogan-hero{margin:0;font-family:"Parisienne",var(--serif);font-weight:400;font-size:clamp(2.3rem,3.7vw,3.5rem);line-height:1.25;color:#f7f0e8;letter-spacing:.01em}
+/* palavras e letras divididas */
+.w{display:inline-block;white-space:nowrap}
+.c{display:inline-block}
+/* faixa 1: palavras descem devagar (o fio de azeite caindo) */
+.b1 .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*2.4,1);opacity:var(--kc);transform:translateY(calc((1 - var(--kc))*-18px))}
+/* faixa 2: palavras surgem suaves, como o molho escorrendo */
+.b2 .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*2.2,1);opacity:var(--kc);transform:translateY(calc((1 - var(--kc))*-12px))}
+/* faixa 3: subida palavra por palavra no assentamento */
+.b3 .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*2,1);opacity:var(--kc);transform:translateY(calc((1 - var(--kc))*10px))}
+.chip{background:rgba(8,8,15,.55);border:1px solid rgba(245,241,234,.18);border-radius:10px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);text-shadow:0 1px 3px rgba(5,5,10,.85)}
+.prato{position:absolute;left:24px;bottom:24px;padding:10px 14px;font-size:.78rem;color:var(--text-primary);display:flex;gap:10px;align-items:baseline}
+.prato b{font-weight:800;letter-spacing:.2em;color:#e7a2a2;font-size:.68rem}
+.ring{position:absolute;right:24px;bottom:24px;width:40px;height:40px;color:var(--accent);transition:opacity .6s var(--ease-out)}
+.ring circle{transform:rotate(-90deg);transform-origin:center;transition:stroke-dashoffset .2s linear}
+.stage.video-ready .ring{opacity:0}
+.cue{position:absolute;right:24px;bottom:24px;width:40px;height:40px;color:var(--text-secondary);animation:bob 2.6s var(--ease-io) infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@media (max-height:560px){.prato,.ring,.cue{display:none}}
+
+/* ============ HERO ESTÁTICO (5 portões) ============ */
+.hero-static{display:none;position:relative;min-height:100svh;padding:calc(var(--navh) + 28px) 20px 0;overflow:hidden;grid-template-rows:1fr auto;text-align:center}
+.hero-static > div:first-child{align-self:center}
+.hero-static h1{margin:0;font-family:"Parisienne",var(--serif);font-weight:400;font-size:clamp(2.6rem,11vw,4rem);line-height:1.2}
+.hero-static p{margin:16px auto 0;max-width:30ch;color:#ddd3c9;font-size:1.05rem}
+.hero-static .shot{position:relative;align-self:end;margin:22px -20px 0;aspect-ratio:16/10;overflow:hidden}
+.hero-static .shot img{width:100%;height:100%;object-fit:cover;object-position:center 70%}
+.hero-static .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,var(--canvas) 0%,rgba(27,19,18,0) 30%)}
+@media (max-width:720px),(orientation:portrait) and (max-width:1024px),(orientation:portrait) and (pointer:coarse),(orientation:landscape) and (pointer:coarse) and (max-height:560px),(prefers-reduced-motion:reduce){
+  .hero{display:none}
+  .hero-static{display:grid}
+}
+@media (orientation:landscape) and (min-width:721px){.hero-static{grid-template-columns:1fr 1.2fr;grid-template-rows:1fr;align-items:center;text-align:left;padding-bottom:40px;gap:32px}.hero-static p{margin-left:0}.hero-static .shot{margin:0;align-self:center;border-radius:4px}.hero-static .shot::after{background:linear-gradient(to right,var(--canvas) 0%,rgba(27,19,18,0) 25%)}}
+
+/* ============ SEÇÕES ============ */
+section{position:relative}
+.light{background:var(--sand);color:var(--ink)}
+.light .label{color:var(--sakura-ink)}
+.dark .label{color:#e7a2a2}
+.sec{padding:clamp(88px,12vw,150px) 0}
+.h2{margin:0;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:1.02;font-size:clamp(2rem,4.4vw,3.7rem)}
+.h2 em{color:var(--accent);font-size:1.06em}
+.dark .h2 em{color:#e39a9a}
+.lede{font-size:clamp(1.02rem,1.3vw,1.15rem);max-width:52ch}
+.light .lede{color:var(--ink-2)}
+.dark .lede{color:var(--text-secondary)}
+
+/* entradas coreografadas */
+.reveal .rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out);transition-delay:calc(var(--i,0)*90ms)}
+.reveal.in .rv{opacity:1;transform:none}
+.reveal.settled .rv{transition-delay:0s}
+.drawline{display:block;width:100%;height:2px;overflow:visible}
+.drawline line{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s var(--ease-io);transition-delay:calc(var(--i,0)*120ms)}
+.reveal.in .drawline line{stroke-dashoffset:0}
+
+/* história */
+.hist-top{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,6vw,90px);align-items:end}
+.hist-top .h2{margin:14px 0 26px}
+.hist-top .lede{margin:0 0 18px}
+.hist-quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1.6vw,1.35rem);line-height:1.5;color:var(--ink);max-width:34ch;margin:30px 0 0;padding-left:20px;border-left:2px solid var(--accent)}
+.hist-photo{position:relative}
+.hist-photo figure{margin:0}
+.hist-photo img{width:100%;height:auto;object-fit:cover;border-radius:3px}
+.hist-photo figcaption{margin-top:10px;font-size:.78rem;color:var(--ink-2)}
+.ph-main figcaption{max-width:46%}
+.ph-main img{aspect-ratio:4/3}
+.ph-premio{width:50%;margin:-14% 0 0 auto !important;position:relative}
+.ph-premio img{aspect-ratio:1;object-position:center 40%;border:6px solid var(--sand);box-shadow:0 18px 40px rgba(34,22,22,.18)}
+.ph-premio figcaption{text-align:right}
+.dez{display:flex;align-items:baseline;gap:14px;margin:0 0 18px;font-family:var(--serif);font-style:italic;color:var(--accent);font-size:clamp(4rem,7vw,6.4rem);line-height:.9}
+.dez small{font-family:var(--sans);font-style:normal;font-size:.74rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
+.marcos{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(64px,8vw,100px);color:var(--line-light)}
+.marco{padding:26px 26px 30px 0}
+.marco .ic{display:block;width:46px;height:46px;margin:0 0 14px;fill:none;stroke:var(--accent);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.marco .ic path{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s var(--ease-io);transition-delay:calc(var(--i,0)*140ms + 200ms)}
+.reveal.in .marco .ic path{stroke-dashoffset:0}
+.marco .n{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:.98rem}
+.marco p{margin:8px 0 0;color:var(--ink);font-weight:700;font-size:1.02rem;line-height:1.45;max-width:30ch}
+.marcos .drawline{grid-column:1/-1}
+
+/* cardápio */
+.menu-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:46px}
+.menu-head .h2{max-width:16ch;margin-top:14px}
+.menu-head .lede{max-width:38ch;margin:0}
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,17vw,230px);gap:14px}
+.dish{position:relative;overflow:hidden;border-radius:4px;background:var(--panel);margin:0}
+.dish img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease-out)}
+.dish:hover img{transform:scale(1.04)}
+.dish figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;background:linear-gradient(to top,rgba(20,13,12,.88),rgba(20,13,12,0));}
+.dish figcaption b{display:block;font-size:1rem;font-weight:800}
+.dish figcaption span{display:block;font-family:var(--serif);font-style:italic;font-size:.9rem;color:#ddd2c8}
+.d-big{grid-column:span 2;grid-row:span 2}
+.d-wide{grid-column:span 2}
+.menu-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:34px}
+.menu-foot p{margin:0;color:var(--text-secondary);font-size:.92rem}
+
+/* filme */
+.filme{background:var(--sand-2)}
+.filme-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:40px}
+.filme-head .h2{margin-top:14px;max-width:15ch}
+.filme-head .lede{margin:0;max-width:44ch}
+.player{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#111;box-shadow:0 30px 70px rgba(34,22,22,.22)}
+.player video{width:100%;height:100%;object-fit:cover;display:block}
+.play{position:absolute;inset:0;width:100%;border:0;cursor:pointer;display:flex;align-items:flex-end;justify-content:flex-end;gap:16px;padding:clamp(18px,3vw,34px);color:#fff;font:inherit;background:linear-gradient(to top left,rgba(20,13,12,.72),rgba(20,13,12,0) 50%);transition:opacity .6s var(--ease-out)}
+.play-dot{width:clamp(58px,6vw,76px);aspect-ratio:1;border-radius:50%;background:var(--accent);display:grid;place-items:center;flex:none;transition:transform .45s var(--ease-out),background-color .35s var(--ease-out);position:relative}
+.play-dot::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(245,241,234,.5);animation:pulse 3.2s var(--ease-out) infinite;animation-delay:-1s}
+.play-dot svg{width:42%;height:42%;margin-left:6%}
+.play:hover .play-dot{transform:scale(1.06);background:var(--accent-hover)}
+.play-txt{text-align:left;font-weight:800;font-size:1.05rem;line-height:1.3;text-shadow:0 1px 3px rgba(5,5,10,.6)}
+.play-txt small{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:.92rem;color:#e9e1d8}
+.player.playing .play{opacity:0;pointer-events:none}
+
+/* momento interativo */
+.momentos{background:linear-gradient(to bottom,var(--canvas),var(--panel) 30%,var(--panel) 70%,var(--canvas))}
+.mom-grid{display:grid;grid-template-columns:1fr minmax(260px,400px) 1fr;gap:clamp(20px,4vw,56px);align-items:center;margin-top:56px}
+.mom-head{text-align:center}
+.mom-head .h2{margin-top:14px}
+.mom-head .lede{margin:18px auto 0;text-align:center}
+.mom-list{list-style:none;margin:0;padding:0;display:grid;gap:26px}
+.mom-list li{opacity:.22;transform:translateY(8px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+.mom-list li.on{opacity:1;transform:none}
+.mom-list .label{display:block;margin-bottom:6px}
+.mom-list p{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,1.5vw,1.3rem);line-height:1.4}
+.mom-left{text-align:right}
+.flor-wrap{position:relative;display:grid;place-items:center}
+.flor-btn{position:relative;width:min(100%,360px);aspect-ratio:1;border:0;padding:0;background:none;color:inherit;cursor:pointer;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;border-radius:50%}
+.flor-btn svg{width:100%;height:100%;overflow:visible}
+.flor-btn .halo{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,rgba(186,76,76,.35),rgba(186,76,76,0) 68%);opacity:.35;animation:breathe 5s var(--ease-io) infinite;animation-delay:-1.5s}
+@keyframes breathe{0%,100%{opacity:.25;transform:scale(.96)}50%{opacity:.55;transform:scale(1.03)}}
+.flor-btn .prog{position:absolute;inset:0;width:100%;height:100%}
+.flor-btn .prog circle{fill:none;stroke-width:1.2;transform:rotate(-90deg);transform-origin:center}
+.flor-btn .prog .track{stroke:rgba(245,241,234,.12)}
+.flor-btn .prog .fill{stroke:var(--accent);stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:var(--po,1)}
+.flor-hint{margin-top:18px;text-align:center;font-size:.8rem;color:var(--text-secondary)}
+.flor-done{margin-top:10px;text-align:center;opacity:0;transform:translateY(10px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out);pointer-events:none}
+.flor-done.on{opacity:1;transform:none;pointer-events:auto}
+.flor-done p{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,2.6vw,2.2rem);margin:0 0 16px}
+
+/* delivery */
+.deliv{display:grid;grid-template-columns:1fr 1fr;min-height:640px}
+.deliv-photo{position:relative;overflow:hidden;background:#111}
+.deliv-photo img{width:100%;height:100%;object-fit:cover}
+.deliv-text{padding:clamp(64px,8vw,120px) clamp(24px,6vw,96px)}
+.deliv-text .h2{margin:14px 0 22px}
+.steps{list-style:none;margin:36px 0 38px;padding:0;color:var(--line-light)}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:6px 14px;padding:18px 0;align-items:baseline}
+.steps .n{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:1.05rem}
+.steps b{display:block;color:var(--ink);font-weight:800}
+.steps span{display:block;color:var(--ink-2);font-size:.95rem}
+.steps .drawline{grid-column:1/-1}
+
+/* unidades */
+.units{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:46px}
+.unit{background:var(--panel);border:1px solid var(--line-dark);border-radius:6px;padding:clamp(26px,3.4vw,40px);display:flex;flex-direction:column}
+.unit-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.unit h3{margin:0;font-weight:800;text-transform:uppercase;font-size:1.5rem;letter-spacing:.02em}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;color:var(--text-secondary)}
+.status i{width:8px;height:8px;border-radius:50%;background:#6d625c;position:relative}
+.status.open{color:#c9d3c4}
+.status.open i{background:#9fb39a}
+.status.open i::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid #9fb39a;animation:pulse 2.8s var(--ease-out) infinite;animation-delay:-.6s}
+@keyframes pulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.8);opacity:0}}
+.unit dl{margin:22px 0 26px;display:grid;gap:14px}
+.unit dt{font-size:.68rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:#e7a2a2}
+.unit dd{margin:3px 0 0;color:var(--text-primary)}
+.unit dd span{color:var(--text-secondary)}
+.unit .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+.unit .btn{padding:12px 20px;font-size:.88rem}
+.link-quiet{font-size:.88rem;font-weight:700;color:var(--text-secondary);text-decoration:none;align-self:center;padding:12px 6px;transition:color .3s var(--ease-out)}
+.link-quiet:hover{color:var(--text-primary)}
+
+/* perguntas */
+.faq-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,90px);align-items:start}
+.faq-wrap .h2{margin-top:14px}
+.faq{border-top:1px solid var(--line-light)}
+.q{border-bottom:1px solid var(--line-light)}
+.q button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;background:none;border:0;padding:22px 0;font:inherit;font-weight:800;font-size:1.05rem;color:var(--ink);text-align:left;cursor:pointer}
+.q button .plus{width:22px;height:22px;flex:none;position:relative}
+.q button .plus::before,.q button .plus::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:var(--accent);transform:translate(-50%,-50%);transition:transform .45s var(--ease-out)}
+.q button .plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+.q.open button .plus::after{transform:translate(-50%,-50%) rotate(0deg)}
+.q .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--ease-out)}
+.q.open .a{grid-template-rows:1fr}
+.q .a > div{overflow:hidden}
+.q .a p{margin:0 0 24px;color:var(--ink-2);max-width:60ch}
+
+/* fechamento */
+.final{padding:clamp(100px,12vw,160px) 0}
+.final-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(36px,7vw,110px);align-items:center}
+.final-photo{margin:0}
+.final-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:4px}
+.final-txt{text-align:left}
+.final .flor-mark{width:56px;margin:0 0 24px}
+.final .h2{font-size:clamp(2.4rem,6vw,5rem)}
+.final .slogan{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,3vw,2.6rem);color:#e39a9a;margin:10px 0 34px}
+.final .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line-dark);padding:56px 0 40px;color:var(--text-secondary);font-size:.9rem}
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px}
+.foot img{width:170px;margin-bottom:16px}
+.foot h4{margin:0 0 12px;font-size:.68rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:#e7a2a2}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.foot a{text-decoration:none;transition:color .3s var(--ease-out)}
+.foot a:hover{color:var(--text-primary)}
+.social{display:flex;gap:12px;margin-top:20px}
+.social a{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(245,241,234,.25);display:grid;place-items:center;color:var(--text-primary);transition:border-color .35s var(--ease-out),background-color .35s var(--ease-out),transform .35s var(--ease-out)}
+.social a:hover{border-color:var(--accent);background:var(--accent);transform:translateY(-2px)}
+.social svg{width:20px;height:20px}
+.ico-link{display:inline-flex;align-items:center;gap:9px}
+.ico-link svg{width:16px;height:16px;color:#e7a2a2;flex:none}
+.copy{margin-top:44px;padding-top:22px;border-top:1px solid var(--line-dark);font-size:.8rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* responsivo */
+@media (max-width:980px){
+  .hist-top,.faq-wrap{grid-template-columns:1fr}
+  .hist-photo{max-width:520px}
+  .marcos{grid-template-columns:1fr 1fr}
+  .mosaic{grid-template-columns:repeat(2,1fr)}
+  .d-big{grid-row:span 2}
+  .mom-grid{grid-template-columns:1fr;max-width:520px;margin-inline:auto}
+  .final-grid{grid-template-columns:1fr}
+  .final-photo{max-width:440px}
+  .marcos{grid-template-columns:1fr 1fr}
+  .mom-left{text-align:left;order:2}
+  .mom-right{order:3}
+  .flor-wrap{order:1}
+  .deliv{grid-template-columns:1fr}
+  .deliv-photo{aspect-ratio:4/3}
+  .units{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .marcos{grid-template-columns:1fr}
+  .mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:10px}
+  .d-big,.d-wide{grid-column:span 2}
+  .dish figcaption{padding:34px 12px 10px}
+  .dish figcaption b{font-size:.88rem}
+  .dish figcaption span{font-size:.78rem}
+  .wrap{width:calc(100% - 32px)}
+}
+
+/* pausas e movimento reduzido */
+body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused !important}
+.offscreen .flor-btn .halo,.offscreen .status.open i::after{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;transition-delay:0s !important;scroll-behavior:auto !important}
+  .reveal .rv{opacity:1;transform:none}
+  .drawline line,.marco .ic path{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<div class="ambient" aria-hidden="true">
+  <div class="bigflor"><svg viewBox="-50 -50 100 100" fill="#F5F1EA"><path fill-rule="evenodd" d="M-4.8,0.2C-4.8,6.3 4.8,6.3 4.8,0.2C4.8,-4.0 -0.4,-6.3 -3.3,-3.2C-4.0,-2.5 -4.8,-0.9 -4.8,0.2"/><path fill-rule="evenodd" d="M5.3,-3.0C8.8,-3.1 10.3,-5.2 12.7,-4.1C9.9,0.1 6.5,-4.1 6.4,1.2C8.0,1.6 8.1,2.0 9.9,2.5C18.9,5.3 26.4,8.0 33.8,0.6C36.1,-1.7 39.5,-6.0 39.8,-9.9C38.0,-10.4 37.0,-10.7 35.6,-11.5C35.9,-12.3 36.2,-12.9 36.6,-13.6C37.7,-15.5 37.5,-13.9 37.7,-16.3C35.9,-16.8 30.9,-20.6 24.4,-20.6C16.2,-20.6 9.8,-12.7 5.7,-6.3C4.7,-4.7 4.9,-4.8 5.3,-3.0"/><path fill-rule="evenodd" d="M-12.7,-24.8C-12.7,-18.9 -8.7,-13.1 -5.5,-8.7C-3.6,-6.2 -4.2,-5.5 -1.1,-6.2C-1.1,-11.7 -1.8,-11.8 0.0,-13.1C1.8,-11.8 1.1,-12.7 1.1,-6.2C4.2,-5.5 4.1,-6.6 8.5,-13.1C14.5,-22.1 14.3,-30.0 6.8,-38.0C6.3,-38.5 6.0,-38.8 5.4,-39.3L3.7,-40.8L0.1,-37.5C-1.3,-38.5 -2.2,-39.0 -2.7,-40.8C-4.5,-40.3 -8.1,-36.3 -9.2,-34.6C-11.0,-32.1 -12.7,-28.8 -12.7,-24.8"/><path fill-rule="evenodd" d="M-37.7,-16.3C-37.4,-13.1 -36.3,-14.0 -35.5,-11.0C-37.5,-10.8 -38.4,-10.2 -39.8,-9.4C-39.2,-7.0 -37.5,-4.1 -35.9,-2.1C-29.8,5.9 -24.0,6.8 -14.4,3.8L-6.4,1.2C-6.5,-4.1 -9.9,0.1 -12.7,-4.1C-10.3,-5.2 -8.8,-3.1 -5.3,-3.0C-4.7,-5.7 -4.9,-5.3 -7.5,-8.8C-8.3,-9.9 -8.5,-10.1 -9.4,-11.1C-10.4,-12.3 -10.3,-12.6 -11.5,-13.8C-17.8,-20.1 -21.2,-22.2 -31.0,-19.2C-33.7,-18.4 -35.0,-16.9 -37.7,-16.3"/><path fill-rule="evenodd" d="M4.8,4.4C4.8,6.3 7.7,7.8 8.0,10.8C6.2,10.6 7.0,11.4 4.8,8.1C3.3,6.1 3.6,6.0 1.1,6.6C1.1,16.3 -0.6,24.6 7.3,30.6C8.7,31.6 9.6,32.3 11.4,33.0C14.2,34.1 17.6,35.3 21.2,35.3C21.4,33.2 21.8,33.2 21.8,30.5C24.1,30.5 24.2,31.0 27.1,31.0C27.2,23.6 30.6,14.2 19.3,8.0C17.0,6.7 14.4,5.8 11.8,4.8C10.5,4.3 4.8,1.8 4.8,4.4"/><path fill-rule="evenodd" d="M-27.1,31.0C-25.5,31.0 -22.8,30.5 -21.8,30.0C-21.8,35.9 -22.1,35.6 -16.7,34.5C-7.7,32.8 -1.1,27.4 -1.1,16.7C-1.1,11.9 0.3,0.9 -5.0,8.5C-7.0,11.4 -6.3,10.6 -8.0,10.8C-7.8,8.4 -0.8,1.1 -8.1,3.7C-10.1,4.4 -11.7,4.9 -13.3,5.4C-30.3,11.1 -28.0,19.8 -27.1,31.0"/><path fill-rule="evenodd" d="M13.8,-19.0L13.8,-18.4L13.2,-18.9L13.8,-19.0ZM13.8,-19.0L13.8,-19.5L14.4,-19.1L13.8,-19.0ZM14.3,-22.7L14.9,-22.7C14.9,-21.3 15.1,-21.2 15.4,-20.0L14.3,-20.0L14.3,-22.7ZM16.5,-23.2C16.2,-24.7 17.7,-23.0 17.0,-23.0C16.0,-23.1 16.7,-22.1 16.5,-23.2M18.6,-25.9C18.6,-27.2 19.4,-26.0 18.9,-25.9C18.9,-25.9 18.6,-24.4 18.6,-25.9M20.2,-26.4L20.3,-26.3C20.3,-26.3 20.1,-26.4 20.2,-26.4M20.7,-29.1L20.9,-28.9C20.8,-28.9 20.7,-29.0 20.7,-29.1M13.8,-31.7C12.6,-26.6 14.8,-27.8 13.3,-21.1C12.7,-18.9 12.3,-19.6 12.2,-16.8C14.4,-17.4 15.7,-19.4 19.5,-20.7C22.2,-21.5 28.0,-19.7 25.4,-30.0C25.2,-30.7 25.1,-31.2 24.7,-32.0C22.4,-35.8 16.9,-32.0 13.8,-31.7"/><path fill-rule="evenodd" d="M22.4,7.4L21.9,7.5L22.1,6.8L22.4,7.4ZM22.4,7.4L22.9,7.2L22.7,7.9L22.4,7.4ZM26.1,6.8L26.3,7.4C24.9,7.8 24.9,8.0 23.9,8.6L23.6,7.6L26.1,6.8ZM27.2,8.7C28.5,8.1 27.3,10.0 27.2,9.3C27.0,8.3 26.2,9.2 27.2,8.7M30.3,10.0C31.6,9.7 30.7,10.8 30.4,10.4C30.4,10.4 28.9,10.5 30.3,10.0M31.3,11.4L31.2,11.6C31.2,11.6 31.2,11.4 31.3,11.4M34.0,11.2L33.9,11.4C33.9,11.4 33.9,11.2 34.0,11.2M34.6,3.8C29.4,4.1 31.1,5.9 24.3,6.2C22.0,6.4 22.5,5.7 19.9,6.4C21.1,8.4 23.4,9.1 25.6,12.4C27.2,14.7 27.0,20.8 36.2,15.4C36.8,15.1 37.2,14.9 37.9,14.2C40.9,11.0 35.7,6.7 34.6,3.8"/><path fill-rule="evenodd" d="M-0.1,23.9L-0.4,23.4L0.3,23.4L-0.1,23.9ZM-0.1,23.9L0.2,24.3L-0.5,24.3L-0.1,23.9ZM1.8,27.1L1.4,27.4C0.5,26.3 0.3,26.4 -0.7,25.7L0.2,25.0L1.8,27.1ZM0.5,28.8C1.6,29.8 -0.7,29.4 -0.0,29.0C0.8,28.4 -0.4,28.1 0.5,28.8M0.5,32.3C1.3,33.3 -0.1,32.9 0.2,32.5C0.2,32.5 -0.5,31.1 0.5,32.3M-0.4,33.7L-0.7,33.6C-0.6,33.6 -0.4,33.6 -0.4,33.7M0.8,36.1L0.6,36.0C0.6,36.0 0.8,36.0 0.8,36.1M7.9,33.8C5.6,29.1 4.6,31.4 1.7,25.2C0.7,23.1 1.5,23.4 -0.2,21.2C-1.5,23.0 -1.3,25.4 -3.5,28.8C-5.1,31.1 -10.7,33.3 -2.2,39.7C-1.7,40.1 -1.3,40.5 -0.5,40.8C3.7,42.4 5.6,36.0 7.9,33.8"/><path fill-rule="evenodd" d="M-23.1,7.4L-22.8,6.9L-22.5,7.6L-23.1,7.4ZM-23.1,7.4L-23.3,7.9L-23.6,7.2L-23.1,7.4ZM-25.4,10.3L-25.9,10.1C-25.1,8.8 -25.3,8.7 -25.0,7.5L-24.0,8.0L-25.4,10.3ZM-27.5,9.7C-28.0,11.1 -28.5,8.8 -27.8,9.3C-27.0,9.8 -27.1,8.7 -27.5,9.7M-30.7,10.9C-31.4,12.1 -31.5,10.6 -31.0,10.8C-31.0,10.8 -29.9,9.6 -30.7,10.9M-32.3,10.6L-32.4,10.3C-32.4,10.4 -32.3,10.5 -32.3,10.6M-34.1,12.6L-34.2,12.4C-34.2,12.4 -34.1,12.5 -34.1,12.6M-29.5,18.4C-25.9,14.6 -28.4,14.5 -23.7,9.5C-22.1,7.9 -22.0,8.7 -20.6,6.4C-22.8,5.8 -24.9,6.8 -28.9,5.9C-31.6,5.3 -35.6,0.8 -38.6,11.0C-38.8,11.7 -39.0,12.1 -39.0,13.0C-39.0,17.5 -32.3,17.0 -29.5,18.4"/><path fill-rule="evenodd" d="M-13.8,-19.7L-13.2,-19.6L-13.8,-19.0L-13.8,-19.7ZM-13.8,-19.7L-14.3,-19.8L-13.7,-20.3L-13.8,-19.7ZM-17.3,-20.8L-17.3,-21.3C-15.8,-21.1 -15.8,-21.3 -14.5,-21.4L-14.7,-20.4L-17.3,-20.8ZM-17.5,-23.0C-19.0,-22.9 -17.1,-24.2 -17.3,-23.4C-17.5,-22.5 -16.4,-23.0 -17.5,-23.0M-19.8,-25.5C-21.2,-25.7 -19.8,-26.3 -19.8,-25.8C-19.8,-25.8 -18.3,-25.2 -19.8,-25.5M-20.1,-27.1L-19.9,-27.3C-20.0,-27.3 -20.1,-27.1 -20.1,-27.1M-22.7,-28.0L-22.5,-28.2C-22.5,-28.2 -22.6,-28.0 -22.7,-28.0M-26.3,-21.6C-21.5,-19.7 -22.3,-22.0 -16.0,-19.5C-13.8,-18.6 -14.6,-18.3 -11.9,-17.8C-12.1,-20.0 -13.9,-21.6 -14.5,-25.6C-15.0,-28.4 -12.3,-33.8 -22.9,-32.8C-23.6,-32.8 -24.0,-32.7 -24.9,-32.4C-29.0,-30.8 -26.1,-24.7 -26.3,-21.6"/></svg></div>
+  <div class="grain"></div>
+</div>
+
+<nav class="nav" id="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="logo" href="#topo" aria-label="Ykedin Sushi, início"><img src="assets/logo-dark.svg" alt="Ykedin Sushi" width="164" height="46"></a>
+    <ul>
+      <li><a href="#historia">História</a></li>
+      <li><a href="#cardapio">Cardápio</a></li>
+      <li><a href="#momentos">Momentos</a></li>
+      <li><a href="#unidades">Unidades</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-wa" href="https://wa.me/5574988182796" target="_blank" rel="noopener" aria-label="Fale com a gente pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.27-.2-.57-.34m-5.42 7.4a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg><span>Fale com a gente</span></a>
+      <a class="btn btn-primary" href="https://pedido.anota.ai/loja/ykedin-cozinha-oriental" target="_blank" rel="noopener">Fazer pedido</a>
+    </div>
+  </div>
+</nav>
+
+<header id="topo">
+  <!-- hero de scrub: desktops e notebooks -->
+  <div class="hero" id="hero">
+    <div class="stage" id="stage">
+      <div class="film" inert>
+        <div class="poster"></div>
+        <video id="heroVideo" preload="none" muted playsinline aria-hidden="true" tabindex="-1"></video>
+      </div>
+      <div class="scrim" aria-hidden="true"></div>
+
+      <h1 class="sr-only">Ykedin Sushi, gastronomia japonesa em Jacobina e Capim Grosso</h1>
+      <div class="band b3 settle" data-a="0" data-b="1">
+        <p class="slogan-hero split-w">Viva esse momento!</p>
+      </div>
+
+      <p class="prato chip" aria-live="off"><b id="pratoN">01</b><span id="pratoT">Salmão grelhado na chapa</span></p>
+      <svg class="ring" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="126" style="stroke-dashoffset:var(--ld,126)"/></svg>
+    </div>
+  </div>
+
+  <!-- hero estático: celulares, tablets em pé e movimento reduzido -->
+  <div class="hero-static">
+    <div>
+      <h1>Viva esse momento!</h1>
+    </div>
+    <div class="shot"><img src="assets/video/hero-ending.jpg" alt="Salmão maçaricado do Ykedin com molho verde e molho escuro sobre prato branco" loading="lazy" width="1600" height="900"></div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- HISTÓRIA -->
+  <section class="light sec reveal" id="historia">
+    <div class="wrap">
+      <div class="hist-top">
+        <div>
+          <p class="label rv">01.04.2016 · Jacobina, Bahia</p>
+          <h2 class="h2 rv" style="--i:1">Antes de ser tendência, <em>já era</em> Ykedin.</h2>
+          <p class="lede rv" style="--i:2">O Ykedin foi inaugurado no dia 1º de abril de 2016 em Jacobina. A ideia era ousada para a época: trazer a gastronomia japonesa, ainda pouco conhecida na região, para o centro da cidade.</p>
+          <p class="lede rv" style="--i:3">Começou como delivery e logo ganhou a cidade, com inovação, apresentação, tecnologia e um atendimento que faz a gente se sentir convidado.</p>
+          <blockquote class="hist-quote rv" style="--i:4">“A inovação nunca foi apenas uma ferramenta. Sempre fez parte da maneira como o Ykedin pensa.”</blockquote>
+        </div>
+        <div class="hist-photo rv" style="--i:2">
+          <div class="dez" aria-hidden="true"><span class="count" data-to="10">10</span><small>anos de momentos</small></div>
+          <figure class="ph-main">
+            <img src="assets/fotos/bastidores.jpg" alt="Equipe do Ykedin preparando os pratos na cozinha, de dólmã preto" loading="lazy" width="777" height="532">
+            <figcaption>Bastidores · cuidado no preparo</figcaption>
+          </figure>
+          <figure class="ph-premio">
+            <img src="assets/fotos/premio-2023.jpg" alt="Equipe do Ykedin com o troféu do Destaque Empresarial 2023" loading="lazy" width="1100" height="1137">
+            <figcaption>Destaque Empresarial</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="marcos">
+        <svg class="drawline" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1=".5" x2="1" y2=".5" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" pathLength="1"/></svg>
+        <div class="marco rv" style="--i:1"><svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M17 4h14a4 4 0 0 1 4 4v32a4 4 0 0 1-4 4H17a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4z" pathLength="1"/><path d="M21 8.5h6" pathLength="1"/><path d="M22.5 39.5h3" pathLength="1"/><path d="M19 20h10l-1 11h-8z" pathLength="1"/><path d="M21.5 20v-1.5a2.5 2.5 0 0 1 5 0V20" pathLength="1"/></svg><span class="n">01</span><p>Primeiro aplicativo próprio de delivery da região.</p></div>
+        <div class="marco rv" style="--i:2"><svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M9 17h30L24 45z" pathLength="1"/><path d="M10 17c1-5 6-6 8.5-3.5C20 9 26 8.5 28 12.5c2.5-3 8-2 10 4.5" pathLength="1"/><path d="M13.5 26.5h21" pathLength="1"/><path d="M24 34.2a2.2 2.2 0 1 0 0-.01" pathLength="1"/></svg><span class="n">02</span><p>Primeiro restaurante com embalagens totalmente personalizadas.</p></div>
+        <div class="marco rv" style="--i:3"><svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 7h32a2 2 0 0 1 2 2v22a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z" pathLength="1"/><path d="M20 33l-2 8h12l-2-8" pathLength="1"/><path d="M15 41h18" pathLength="1"/><path d="M13 14h12" pathLength="1"/><path d="M13 19.5h18" pathLength="1"/><path d="M13 25h9" pathLength="1"/></svg><span class="n">03</span><p>Primeiro restaurante com site e cardápio online.</p></div>
+        <div class="marco rv" style="--i:4"><svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M9 9h30a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V13a4 4 0 0 1 4-4z" pathLength="1"/><path d="M13 15h9v8h-9z" pathLength="1"/><path d="M26 15h9v8h-9z" pathLength="1"/><path d="M13 27h9v6h-9z" pathLength="1"/><path d="M26 27h9v6h-9z" pathLength="1"/></svg><span class="n">04</span><p>Pioneiro no autoatendimento por tablets nas mesas.</p></div>
+        <svg class="drawline" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true" style="--i:4"><line x1="0" y1=".5" x2="1" y2=".5" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" pathLength="1"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDÁPIO -->
+  <section class="dark sec reveal" id="cardapio">
+    <div class="wrap">
+      <div class="menu-head">
+        <div>
+          <p class="label rv">Cardápio</p>
+          <h2 class="h2 rv" style="--i:1">Há sabores que transformam <em>qualquer encontro.</em></h2>
+        </div>
+        <p class="lede rv" style="--i:2">Textura do salmão, finalização caprichada, molho na medida. Todas as fotos desta página são dos nossos pratos de verdade.</p>
+      </div>
+      <div class="mosaic">
+        <figure class="dish d-big rv" style="--i:1"><img src="assets/fotos/carpaccio.jpg" alt="Carpaccio de salmão na pedra de sal com ovas, pérolas de shoyu e manjericão" loading="lazy" width="1600" height="1066"><figcaption><b>Carpaccio na pedra de sal</b><span>Salmão, ovas, pérolas de shoyu e limão.</span></figcaption></figure>
+        <figure class="dish rv" style="--i:2"><img src="assets/fotos/tartar.jpg" alt="Tartar de salmão com pimenta biquinho e crocante" loading="lazy" width="1600" height="1066"><figcaption><b>Tartar de salmão</b><span>Pimenta biquinho e crocante de alho.</span></figcaption></figure>
+        <figure class="dish rv" style="--i:3"><img src="assets/fotos/macaricado.jpg" alt="Salmão maçaricado com azeite e molho escuro" loading="lazy" width="1600" height="1066"><figcaption><b>Salmão maçaricado</b><span>Com azeite e o molho da casa.</span></figcaption></figure>
+        <figure class="dish rv" style="--i:4"><img src="assets/fotos/uramaki-flor.jpg" alt="Uramaki coberto de salmão em tábua de madeira com flor roxa" loading="lazy" width="1600" height="1066"><figcaption><b>Uramaki de salmão</b><span>Coberto de salmão e cebolinha.</span></figcaption></figure>
+        <figure class="dish rv" style="--i:5"><img src="assets/fotos/hot.jpg" alt="Tábua redonda com hots variados, cream cheese e crispy" loading="lazy" width="1600" height="1066"><figcaption><b>Hots da casa</b><span>Para quem gosta de crocante.</span></figcaption></figure>
+        <figure class="dish d-wide rv" style="--i:6"><img src="assets/fotos/grelhado.jpg" alt="Salmão grelhado na chapa sobre legumes salteados" loading="lazy" width="1600" height="1066"><figcaption><b>Salmão grelhado na chapa</b><span>Com legumes salteados.</span></figcaption></figure>
+        <figure class="dish rv" style="--i:7"><img src="assets/fotos/yakisoba.jpg" alt="Yakisoba com camarão, lula e legumes" loading="lazy" width="1600" height="1066"><figcaption><b>Yakisoba</b><span>Camarão, lula e legumes.</span></figcaption></figure>
+        <figure class="dish rv" style="--i:8"><img src="assets/fotos/sobremesa.jpg" alt="Sobremesa de chocolate com morangos e creme" loading="lazy" width="1600" height="1066"><figcaption><b>Sobremesa</b><span>Para fechar a noite.</span></figcaption></figure>
+      </div>
+      <div class="menu-foot rv" style="--i:4">
+        <p>Preços, combinados e o cardápio completo estão no pedido online.</p>
+        <a class="btn btn-primary" href="https://pedido.anota.ai/loja/ykedin-cozinha-oriental" target="_blank" rel="noopener">Ver cardápio completo e pedir</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILME -->
+  <section class="light sec filme reveal" id="filme">
+    <div class="wrap">
+      <div class="filme-head">
+        <div>
+          <p class="label rv">#vivaessemomento</p>
+          <h2 class="h2 rv" style="--i:1">Um voo, um jantar, <em>uma família.</em></h2>
+        </div>
+        <p class="lede rv" style="--i:2">Pista de voo livre de Jacobina & Restaurante Ykedin - 2017</p>
+      </div>
+      <div class="player rv" style="--i:3">
+        <video id="filmeVideo" preload="none" playsinline poster="assets/video/filme-poster.jpg" aria-label="Filme Ykedin: uma família, um voo livre e um jantar">
+          <source src="assets/video/filme-voo-livre.mp4" type="video/mp4">
+        </video>
+        <button class="play" id="filmePlay" type="button" aria-label="Assistir ao filme, 1 minuto, com som">
+          <span class="play-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>
+          <span class="play-txt">Assistir ao filme <small>1 min · com som</small></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOMENTO INTERATIVO -->
+  <section class="dark sec momentos reveal" id="momentos">
+    <div class="wrap">
+      <div class="mom-head">
+        <p class="label rv">Para cada momento</p>
+        <h2 class="h2 rv" style="--i:1">Uma flor. <em>Cinco momentos.</em></h2>
+        <p class="lede rv" style="--i:2">A flor é a nossa assinatura desde o primeiro dia. Segure e veja ela abrir.</p>
+      </div>
+      <div class="mom-grid">
+        <ul class="mom-list mom-left">
+          <li data-m="0"><span class="label">Casais</span><p>Algumas histórias merecem uma mesa só para elas.</p></li>
+          <li data-m="2"><span class="label">Amigos</span><p>Os melhores momentos não precisam de grandes motivos.</p></li>
+          <li data-m="4"><span class="label">Na rotina</span><p>Uma noite comum também pode virar um bom momento.</p></li>
+        </ul>
+        <div class="flor-wrap">
+          <button class="flor-btn" id="florBtn" type="button" aria-describedby="florHint">
+            <span class="sr-only">Segure para abrir a flor e revelar os momentos</span>
+            <span class="halo" aria-hidden="true"></span>
+            <svg class="prog" viewBox="0 0 100 100" aria-hidden="true"><circle class="track" cx="50" cy="50" r="48.5"/><circle class="fill" cx="50" cy="50" r="48.5" pathLength="1"/></svg>
+            <svg viewBox="-60 -60 120 120" aria-hidden="true"><g class="leaf"><path fill-rule="evenodd" d="M13.8,-19.0L13.8,-18.4L13.2,-18.9L13.8,-19.0ZM13.8,-19.0L13.8,-19.5L14.4,-19.1L13.8,-19.0ZM14.3,-22.7L14.9,-22.7C14.9,-21.3 15.1,-21.2 15.4,-20.0L14.3,-20.0L14.3,-22.7ZM16.5,-23.2C16.2,-24.7 17.7,-23.0 17.0,-23.0C16.0,-23.1 16.7,-22.1 16.5,-23.2M18.6,-25.9C18.6,-27.2 19.4,-26.0 18.9,-25.9C18.9,-25.9 18.6,-24.4 18.6,-25.9M20.2,-26.4L20.3,-26.3C20.3,-26.3 20.1,-26.4 20.2,-26.4M20.7,-29.1L20.9,-28.9C20.8,-28.9 20.7,-29.0 20.7,-29.1M13.8,-31.7C12.6,-26.6 14.8,-27.8 13.3,-21.1C12.7,-18.9 12.3,-19.6 12.2,-16.8C14.4,-17.4 15.7,-19.4 19.5,-20.7C22.2,-21.5 28.0,-19.7 25.4,-30.0C25.2,-30.7 25.1,-31.2 24.7,-32.0C22.4,-35.8 16.9,-32.0 13.8,-31.7" fill="#7a3131"/></g><g class="leaf"><path fill-rule="evenodd" d="M22.4,7.4L21.9,7.5L22.1,6.8L22.4,7.4ZM22.4,7.4L22.9,7.2L22.7,7.9L22.4,7.4ZM26.1,6.8L26.3,7.4C24.9,7.8 24.9,8.0 23.9,8.6L23.6,7.6L26.1,6.8ZM27.2,8.7C28.5,8.1 27.3,10.0 27.2,9.3C27.0,8.3 26.2,9.2 27.2,8.7M30.3,10.0C31.6,9.7 30.7,10.8 30.4,10.4C30.4,10.4 28.9,10.5 30.3,10.0M31.3,11.4L31.2,11.6C31.2,11.6 31.2,11.4 31.3,11.4M34.0,11.2L33.9,11.4C33.9,11.4 33.9,11.2 34.0,11.2M34.6,3.8C29.4,4.1 31.1,5.9 24.3,6.2C22.0,6.4 22.5,5.7 19.9,6.4C21.1,8.4 23.4,9.1 25.6,12.4C27.2,14.7 27.0,20.8 36.2,15.4C36.8,15.1 37.2,14.9 37.9,14.2C40.9,11.0 35.7,6.7 34.6,3.8" fill="#7a3131"/></g><g class="leaf"><path fill-rule="evenodd" d="M-0.1,23.9L-0.4,23.4L0.3,23.4L-0.1,23.9ZM-0.1,23.9L0.2,24.3L-0.5,24.3L-0.1,23.9ZM1.8,27.1L1.4,27.4C0.5,26.3 0.3,26.4 -0.7,25.7L0.2,25.0L1.8,27.1ZM0.5,28.8C1.6,29.8 -0.7,29.4 -0.0,29.0C0.8,28.4 -0.4,28.1 0.5,28.8M0.5,32.3C1.3,33.3 -0.1,32.9 0.2,32.5C0.2,32.5 -0.5,31.1 0.5,32.3M-0.4,33.7L-0.7,33.6C-0.6,33.6 -0.4,33.6 -0.4,33.7M0.8,36.1L0.6,36.0C0.6,36.0 0.8,36.0 0.8,36.1M7.9,33.8C5.6,29.1 4.6,31.4 1.7,25.2C0.7,23.1 1.5,23.4 -0.2,21.2C-1.5,23.0 -1.3,25.4 -3.5,28.8C-5.1,31.1 -10.7,33.3 -2.2,39.7C-1.7,40.1 -1.3,40.5 -0.5,40.8C3.7,42.4 5.6,36.0 7.9,33.8" fill="#7a3131"/></g><g class="leaf"><path fill-rule="evenodd" d="M-23.1,7.4L-22.8,6.9L-22.5,7.6L-23.1,7.4ZM-23.1,7.4L-23.3,7.9L-23.6,7.2L-23.1,7.4ZM-25.4,10.3L-25.9,10.1C-25.1,8.8 -25.3,8.7 -25.0,7.5L-24.0,8.0L-25.4,10.3ZM-27.5,9.7C-28.0,11.1 -28.5,8.8 -27.8,9.3C-27.0,9.8 -27.1,8.7 -27.5,9.7M-30.7,10.9C-31.4,12.1 -31.5,10.6 -31.0,10.8C-31.0,10.8 -29.9,9.6 -30.7,10.9M-32.3,10.6L-32.4,10.3C-32.4,10.4 -32.3,10.5 -32.3,10.6M-34.1,12.6L-34.2,12.4C-34.2,12.4 -34.1,12.5 -34.1,12.6M-29.5,18.4C-25.9,14.6 -28.4,14.5 -23.7,9.5C-22.1,7.9 -22.0,8.7 -20.6,6.4C-22.8,5.8 -24.9,6.8 -28.9,5.9C-31.6,5.3 -35.6,0.8 -38.6,11.0C-38.8,11.7 -39.0,12.1 -39.0,13.0C-39.0,17.5 -32.3,17.0 -29.5,18.4" fill="#7a3131"/></g><g class="leaf"><path fill-rule="evenodd" d="M-13.8,-19.7L-13.2,-19.6L-13.8,-19.0L-13.8,-19.7ZM-13.8,-19.7L-14.3,-19.8L-13.7,-20.3L-13.8,-19.7ZM-17.3,-20.8L-17.3,-21.3C-15.8,-21.1 -15.8,-21.3 -14.5,-21.4L-14.7,-20.4L-17.3,-20.8ZM-17.5,-23.0C-19.0,-22.9 -17.1,-24.2 -17.3,-23.4C-17.5,-22.5 -16.4,-23.0 -17.5,-23.0M-19.8,-25.5C-21.2,-25.7 -19.8,-26.3 -19.8,-25.8C-19.8,-25.8 -18.3,-25.2 -19.8,-25.5M-20.1,-27.1L-19.9,-27.3C-20.0,-27.3 -20.1,-27.1 -20.1,-27.1M-22.7,-28.0L-22.5,-28.2C-22.5,-28.2 -22.6,-28.0 -22.7,-28.0M-26.3,-21.6C-21.5,-19.7 -22.3,-22.0 -16.0,-19.5C-13.8,-18.6 -14.6,-18.3 -11.9,-17.8C-12.1,-20.0 -13.9,-21.6 -14.5,-25.6C-15.0,-28.4 -12.3,-33.8 -22.9,-32.8C-23.6,-32.8 -24.0,-32.7 -24.9,-32.4C-29.0,-30.8 -26.1,-24.7 -26.3,-21.6" fill="#7a3131"/></g><g class="petal"><path fill-rule="evenodd" d="M-12.7,-24.8C-12.7,-18.9 -8.7,-13.1 -5.5,-8.7C-3.6,-6.2 -4.2,-5.5 -1.1,-6.2C-1.1,-11.7 -1.8,-11.8 0.0,-13.1C1.8,-11.8 1.1,-12.7 1.1,-6.2C4.2,-5.5 4.1,-6.6 8.5,-13.1C14.5,-22.1 14.3,-30.0 6.8,-38.0C6.3,-38.5 6.0,-38.8 5.4,-39.3L3.7,-40.8L0.1,-37.5C-1.3,-38.5 -2.2,-39.0 -2.7,-40.8C-4.5,-40.3 -8.1,-36.3 -9.2,-34.6C-11.0,-32.1 -12.7,-28.8 -12.7,-24.8" fill="#BA4C4C"/></g><g class="petal"><path fill-rule="evenodd" d="M5.3,-3.0C8.8,-3.1 10.3,-5.2 12.7,-4.1C9.9,0.1 6.5,-4.1 6.4,1.2C8.0,1.6 8.1,2.0 9.9,2.5C18.9,5.3 26.4,8.0 33.8,0.6C36.1,-1.7 39.5,-6.0 39.8,-9.9C38.0,-10.4 37.0,-10.7 35.6,-11.5C35.9,-12.3 36.2,-12.9 36.6,-13.6C37.7,-15.5 37.5,-13.9 37.7,-16.3C35.9,-16.8 30.9,-20.6 24.4,-20.6C16.2,-20.6 9.8,-12.7 5.7,-6.3C4.7,-4.7 4.9,-4.8 5.3,-3.0" fill="#BA4C4C"/></g><g class="petal"><path fill-rule="evenodd" d="M4.8,4.4C4.8,6.3 7.7,7.8 8.0,10.8C6.2,10.6 7.0,11.4 4.8,8.1C3.3,6.1 3.6,6.0 1.1,6.6C1.1,16.3 -0.6,24.6 7.3,30.6C8.7,31.6 9.6,32.3 11.4,33.0C14.2,34.1 17.6,35.3 21.2,35.3C21.4,33.2 21.8,33.2 21.8,30.5C24.1,30.5 24.2,31.0 27.1,31.0C27.2,23.6 30.6,14.2 19.3,8.0C17.0,6.7 14.4,5.8 11.8,4.8C10.5,4.3 4.8,1.8 4.8,4.4" fill="#BA4C4C"/></g><g class="petal"><path fill-rule="evenodd" d="M-27.1,31.0C-25.5,31.0 -22.8,30.5 -21.8,30.0C-21.8,35.9 -22.1,35.6 -16.7,34.5C-7.7,32.8 -1.1,27.4 -1.1,16.7C-1.1,11.9 0.3,0.9 -5.0,8.5C-7.0,11.4 -6.3,10.6 -8.0,10.8C-7.8,8.4 -0.8,1.1 -8.1,3.7C-10.1,4.4 -11.7,4.9 -13.3,5.4C-30.3,11.1 -28.0,19.8 -27.1,31.0" fill="#BA4C4C"/></g><g class="petal"><path fill-rule="evenodd" d="M-37.7,-16.3C-37.4,-13.1 -36.3,-14.0 -35.5,-11.0C-37.5,-10.8 -38.4,-10.2 -39.8,-9.4C-39.2,-7.0 -37.5,-4.1 -35.9,-2.1C-29.8,5.9 -24.0,6.8 -14.4,3.8L-6.4,1.2C-6.5,-4.1 -9.9,0.1 -12.7,-4.1C-10.3,-5.2 -8.8,-3.1 -5.3,-3.0C-4.7,-5.7 -4.9,-5.3 -7.5,-8.8C-8.3,-9.9 -8.5,-10.1 -9.4,-11.1C-10.4,-12.3 -10.3,-12.6 -11.5,-13.8C-17.8,-20.1 -21.2,-22.2 -31.0,-19.2C-33.7,-18.4 -35.0,-16.9 -37.7,-16.3" fill="#BA4C4C"/></g><path fill-rule="evenodd" d="M-4.8,0.2C-4.8,6.3 4.8,6.3 4.8,0.2C4.8,-4.0 -0.4,-6.3 -3.3,-3.2C-4.0,-2.5 -4.8,-0.9 -4.8,0.2" fill="#BA4C4C"/></svg>
+          </button>
+          <p class="flor-hint" id="florHint">Pressione e segure a flor</p>
+          <div class="flor-done" id="florDone">
+            <p>Viva esse momento!</p>
+            <a class="btn btn-primary" href="https://pedido.anota.ai/loja/ykedin-cozinha-oriental" target="_blank" rel="noopener" tabindex="-1">Fazer pedido</a>
+          </div>
+        </div>
+        <ul class="mom-list mom-right">
+          <li data-m="1"><span class="label">Família</span><p>Mais um ano de vida. Mais um momento para celebrar.</p></li>
+          <li data-m="3"><span class="label">Em casa</span><p>Seu combinado favorito, do jeito que você gosta.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERY -->
+  <section class="light deliv reveal" id="delivery">
+    <div class="deliv-photo"><img src="assets/fotos/uramaki-branco.jpg" alt="Uramaki de salmão com camarão em tábua de madeira rústica e flor branca" loading="lazy" width="1600" height="1066"></div>
+    <div class="deliv-text">
+      <p class="label rv">Delivery</p>
+      <h2 class="h2 rv" style="--i:1">A experiência <em>chega inteira.</em></h2>
+      <p class="lede rv" style="--i:2">Nascemos como delivery, então levar o Ykedin até a sua casa é coisa que a gente faz desde o primeiro dia. O cuidado que você vê no salão vai junto em cada pedido.</p>
+      <ul class="steps">
+        <svg class="drawline" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1=".5" x2="1" y2=".5" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" pathLength="1"/></svg>
+        <li class="rv" style="--i:3"><span class="n">01</span><div><b>Embalagem própria</b><span>Fomos o primeiro restaurante da região com embalagem totalmente personalizada.</span></div></li>
+        <svg class="drawline" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true" style="--i:2"><line x1="0" y1=".5" x2="1" y2=".5" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" pathLength="1"/></svg>
+        <li class="rv" style="--i:4"><span class="n">02</span><div><b>Pedido online</b><span>Escolha no cardápio online, sem ligação e sem espera para ser atendido.</span></div></li>
+        <svg class="drawline" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true" style="--i:3"><line x1="0" y1=".5" x2="1" y2=".5" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" pathLength="1"/></svg>
+        <li class="rv" style="--i:5"><span class="n">03</span><div><b>WhatsApp</b><span>Prefere conversar? Chame a gente no 74 98818-2796.</span></div></li>
+        <svg class="drawline" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true" style="--i:4"><line x1="0" y1=".5" x2="1" y2=".5" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" pathLength="1"/></svg>
+      </ul>
+      <div class="rv" style="--i:6"><a class="btn btn-primary" href="https://pedido.anota.ai/loja/ykedin-cozinha-oriental" target="_blank" rel="noopener">Fazer pedido</a></div>
+    </div>
+  </section>
+
+  <!-- UNIDADES -->
+  <section class="dark sec reveal" id="unidades">
+    <div class="wrap">
+      <p class="label rv">Nossas unidades</p>
+      <h2 class="h2 rv" style="--i:1">Duas casas. <em>O mesmo jeito de receber.</em></h2>
+      <div class="units">
+        <article class="unit rv" style="--i:2" data-unit="jacobina">
+          <div class="unit-top"><h3>Jacobina</h3><span class="status"><i></i><span class="st">Horário de funcionamento</span></span></div>
+          <dl>
+            <div><dt>Endereço</dt><dd>Rua Senador Pedro Lago, nº 61, Centro<br><span>Em frente ao banco Itaú · Jacobina, BA</span></dd></div>
+            <div><dt>Funcionamento</dt><dd>Almoço: segunda a sexta, 11h30 às 14h30<br>Jantar: todos os dias, 18h às 23h</dd></div>
+            <div><dt>Telefone</dt><dd>74 98818-2796</dd></div>
+          </dl>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://pedido.anota.ai/loja/ykedin-cozinha-oriental" target="_blank" rel="noopener">Fazer pedido</a>
+            <a class="btn btn-ghost" href="https://wa.me/5574988182796" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="link-quiet" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Senador+Pedro+Lago+61+Centro+Jacobina+BA" target="_blank" rel="noopener">Como chegar</a>
+          </div>
+        </article>
+        <article class="unit rv" style="--i:3" data-unit="capim">
+          <div class="unit-top"><h3>Capim Grosso</h3><span class="status"><i></i><span class="st">Horário de funcionamento</span></span></div>
+          <dl>
+            <div><dt>Endereço</dt><dd>Av. Leôncio Ferreira dos Santos, nº 276<br><span>Centro Empresarial Rios · Capim Grosso, BA</span></dd></div>
+            <div><dt>Funcionamento</dt><dd>Jantar: terça a domingo, 18h às 23h</dd></div>
+            <div><dt>Telefone</dt><dd>74 98818-2796</dd></div>
+          </dl>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://pedido.anota.ai/loja/ykedin-cozinha-oriental" target="_blank" rel="noopener">Fazer pedido</a>
+            <a class="btn btn-ghost" href="https://wa.me/5574988182796" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="link-quiet" href="https://www.google.com/maps/search/?api=1&amp;query=Av+Le%C3%B4ncio+Ferreira+dos+Santos+276+Capim+Grosso+BA" target="_blank" rel="noopener">Como chegar</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERGUNTAS -->
+  <section class="light sec reveal" id="perguntas" style="background:var(--sand-2)">
+    <div class="wrap faq-wrap">
+      <div>
+        <p class="label rv">Perguntas</p>
+        <h2 class="h2 rv" style="--i:1">Antes de <em>pedir.</em></h2>
+      </div>
+      <div class="faq rv" style="--i:2">
+        <div class="q"><button type="button" aria-expanded="false" aria-controls="a1" id="q1">Como faço meu pedido?<span class="plus" aria-hidden="true"></span></button><div class="a" id="a1" role="region" aria-labelledby="q1"><div><p>Pelo botão Fazer pedido, que abre o nosso cardápio online, ou pelo WhatsApp 74 98818-2796. Vale para Jacobina e para Capim Grosso.</p></div></div></div>
+        <div class="q"><button type="button" aria-expanded="false" aria-controls="a2" id="q2">O sushi chega bem no delivery?<span class="plus" aria-hidden="true"></span></button><div class="a" id="a2" role="region" aria-labelledby="q2"><div><p>Esse é o nosso cuidado desde 2016. Nascemos como delivery e fomos o primeiro restaurante da região com embalagem totalmente personalizada, pensada para a experiência chegar inteira até você.</p></div></div></div>
+        <div class="q"><button type="button" aria-expanded="false" aria-controls="a3" id="q3">Quais são os horários?<span class="plus" aria-hidden="true"></span></button><div class="a" id="a3" role="region" aria-labelledby="q3"><div><p>Em Jacobina: almoço de segunda a sexta, das 11h30 às 14h30, e jantar todos os dias, das 18h às 23h. Em Capim Grosso: jantar de terça a domingo, das 18h às 23h.</p></div></div></div>
+        <div class="q"><button type="button" aria-expanded="false" aria-controls="a4" id="q4">Tem opção para quem não come peixe cru?<span class="plus" aria-hidden="true"></span></button><div class="a" id="a4" role="region" aria-labelledby="q4"><div><p>Tem. Hots, salmão grelhado na chapa, yakisoba e sobremesas, por exemplo. O cardápio online mostra tudo.</p></div></div></div>
+        <div class="q"><button type="button" aria-expanded="false" aria-controls="a5" id="q5">Posso comemorar um aniversário aí?<span class="plus" aria-hidden="true"></span></button><div class="a" id="a5" role="region" aria-labelledby="q5"><div><p>Pode, e a gente adora. Chame a unidade no WhatsApp para combinar os detalhes.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FECHAMENTO -->
+  <section class="dark final reveal" id="pedido">
+    <div class="wrap final-grid">
+      <figure class="final-photo rv"><img src="assets/fotos/casal-neon.jpg" alt="Casal se olhando em frente ao neon Viva esse momento no salão do Ykedin" loading="lazy" width="816" height="1600"></figure>
+      <div class="final-txt">
+        <img class="flor-mark rv" src="assets/flor.svg" alt="" width="64" height="66">
+        <h2 class="h2 rv" style="--i:1">Hoje tem Ykedin.</h2>
+        <p class="slogan rv" style="--i:2">Viva esse momento!</p>
+        <div class="cta-row rv" style="--i:3">
+          <a class="btn btn-primary" href="https://pedido.anota.ai/loja/ykedin-cozinha-oriental" target="_blank" rel="noopener">Fazer pedido</a>
+          <a class="btn btn-ghost" href="https://wa.me/5574988182796" target="_blank" rel="noopener">Fale com a gente</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <img src="assets/logo-dark.svg" alt="Ykedin Sushi" width="170" height="48" loading="lazy">
+        <p>Gastronomia japonesa contemporânea em Jacobina e Capim Grosso, Bahia. Desde 2016.</p>
+        <div class="social">
+          <a href="https://wa.me/5574988182796" target="_blank" rel="noopener" aria-label="WhatsApp do Ykedin"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.27-.2-.57-.34m-5.42 7.4a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg></a>
+          <a href="https://www.instagram.com/ykedin/" target="_blank" rel="noopener" aria-label="Instagram do Ykedin, @ykedin"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Peça</h4>
+        <ul>
+          <li><a href="https://pedido.anota.ai/loja/ykedin-cozinha-oriental" target="_blank" rel="noopener">Cardápio online</a></li>
+          <li><a class="ico-link" href="https://wa.me/5574988182796" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.27-.2-.57-.34m-5.42 7.4a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg>WhatsApp 74 98818-2796</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Acompanhe</h4>
+        <ul>
+          <li><a class="ico-link" href="https://www.instagram.com/ykedin/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>Instagram @ykedin</a></li>
+          <li><a href="#unidades">Nossas unidades</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy"><span>© 2026 Ykedin Sushi. Dez anos de momentos.</span><span>Viva esse momento!</span></div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+  const smoothstep = (p, e0, e1) => { const t = clamp((p - e0) / (e1 - e0), 0, 1); return t * t * (3 - 2 * t); };
+  const reduceMQ = matchMedia('(prefers-reduced-motion: reduce)');
+
+  // ---------- divisão de texto (gerador com semente: offsets iguais em todo carregamento)
+  function rng(seed) { let s = seed >>> 0; return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296; }
+  function splitWords(el, seed) {
+    const r = rng(seed); const raw = el.textContent.trim();
+    const text = raw.replace(/\s*\|\s*/g, ' ');
+    const words = raw.split(/\s+/);
+    el.innerHTML = '<span class="sr-only">' + text + '</span>';
+    const vis = document.createElement('span'); vis.setAttribute('aria-hidden', 'true');
+    words.forEach((w, i) => {
+      if (w === '|') { vis.appendChild(document.createElement('br')); return; }
+      const s = document.createElement('span'); s.className = 'w'; s.textContent = w;
+      s.style.setProperty('--th', (i / words.length * 0.5 + r() * 0.04).toFixed(3));
+      vis.appendChild(s); if (i < words.length - 1) vis.appendChild(document.createTextNode(' '));
+    });
+    el.appendChild(vis);
+  }
+  $$('.split-w').forEach((el, i) => splitWords(el, 11 + i));
+  
+  // ---------- HERO DE SCRUB
+  const hero = $('#hero'), stage = $('#stage'), video = $('#heroVideo');
+  const posterLayer = $('.poster', stage), ring = $('.ring', stage);
+  const VIDEO_URL = 'assets/video/hero-scrub.mp4';
+  const VIDEO_BYTES = 7031877;
+  const POSTER_URL = 'assets/video/hero-poster.jpg';
+  const bands = $$('.band', stage).map(el => ({ el, a: +el.dataset.a, b: +el.dataset.b, ramp: +el.dataset.ramp || 0, op: -1, k: -1, vis: null }));
+  const PRATOS = [[0, '01', 'Salmão grelhado na chapa'], [0.345, '02', 'Camarão envolto em salmão'], [0.66, '03', 'Salmão maçaricado']];
+  const pratoN = $('#pratoN'), pratoT = $('#pratoT');
+  let lastPrato = -1;
+
+  const heroProgress = () => {
+    const range = hero.offsetHeight - innerHeight;
+    return range > 0 ? clamp(-hero.getBoundingClientRect().top / range, 0, 1) : 0;
+  };
+
+  let loadK = 0;
+  function updateCaptions(p) {
+    const last = bands.length - 1;
+    bands.forEach((b, i) => {
+      const f = Math.min(0.02, (b.b - b.a) / 3);
+      const inO = i === 0 ? 1 : smoothstep(p, b.a, b.a + f);
+      const outO = i === last ? 1 : 1 - smoothstep(p, b.b - f, b.b);
+      const op = (i === 0 && p < b.a) ? 1 : inO * outO;
+      let k = clamp((p - b.a) / (b.ramp || Math.min(0.025, (b.b - b.a) * 0.35)), 0, 1);
+      if (i === 0) k = Math.max(k, loadK);
+      if (Math.abs(op - b.op) > 0.004 || (op === 0) !== (b.op === 0)) {
+        b.op = op; b.el.style.opacity = op.toFixed(3);
+        const vis = op > 0.01;
+        if (vis !== b.vis) { b.vis = vis; b.el.style.visibility = vis ? 'visible' : 'hidden'; }
+      }
+      if (Math.abs(k - b.k) > 0.008 || (k === 1 && b.k !== 1) || (k === 0 && b.k !== 0)) { b.k = k; b.el.style.setProperty('--k', k.toFixed(3)); }
+    });
+    let pi = 0; PRATOS.forEach((x, i) => { if (p >= x[0]) pi = i; });
+    if (pi !== lastPrato) { lastPrato = pi; pratoN.textContent = PRATOS[pi][1]; pratoT.textContent = PRATOS[pi][2]; }
+  }
+
+  // seeks travados: nunca sobrepor
+  let seekBusy = false, pendingTime = null;
+  function requestSeek(t) {
+    if (!video.duration) return;
+    if (seekBusy) { pendingTime = t; return; }
+    seekBusy = true; video.currentTime = t;
+  }
+  video.addEventListener('seeked', () => {
+    seekBusy = false;
+    if (pendingTime !== null) { const t = pendingTime; pendingTime = null; requestSeek(t); }
+  });
+  video.addEventListener('error', () => { seekBusy = false; pendingTime = null; failVideo(); });
+
+  // interpolação normalizada por dt, loop que descansa
+  let target = 0, shown = 0, rafId = null, lastTick = 0, heroOnScreen = true;
+  function tick(now) {
+    const dt = Math.min(100, now - (lastTick || now)); lastTick = now;
+    const k = 0.16;
+    shown += (target - shown) * (1 - Math.pow(1 - k, dt / 16.667));
+    if (Math.abs(target - shown) < 0.0005) { shown = target; rafId = null; lastTick = 0; }
+    else rafId = requestAnimationFrame(tick);
+    if (video.duration) requestSeek(Math.min(shown * video.duration, video.duration - 0.04));
+    updateCaptions(shown);
+  }
+  function onScroll() {
+    target = heroProgress();
+    if (rafId === null && heroOnScreen) rafId = requestAnimationFrame(tick);
+  }
+  new IntersectionObserver(es => { heroOnScreen = es[0].isIntersecting; if (heroOnScreen) onScroll(); }).observe(hero);
+
+  // busca do vídeo como Blob transmitido, com anel honesto
+  let heroInit = false, started = false;
+  function initHeroOnce() {
+    if (heroInit) return; heroInit = true;
+    posterLayer.style.backgroundImage = "url('" + POSTER_URL + "')";
+    const img = new Image();
+    img.onload = startBlobFetch; img.onerror = startBlobFetch; img.src = POSTER_URL;
+    setTimeout(startBlobFetch, 4000);
+  }
+  function startBlobFetch() { if (started) return; started = true; loadHeroBlob().catch(failVideo); }
+  async function loadHeroBlob() {
+    const ctrl = new AbortController();
+    let watchdog = setTimeout(() => ctrl.abort(), 20000);
+    const res = await fetch(VIDEO_URL, { priority: 'low', signal: ctrl.signal });
+    if (!res.ok) throw new Error('video ' + res.status);
+    const total = Number(res.headers.get('Content-Length')) || VIDEO_BYTES;
+    const reader = res.body.getReader();
+    const chunks = []; let got = 0, lastRing = 0;
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      clearTimeout(watchdog); watchdog = setTimeout(() => ctrl.abort(), 20000);
+      chunks.push(value); got += value.length;
+      const frac = Math.min(1, got / total), now = performance.now();
+      if (now - lastRing > 100 || frac === 1) { lastRing = now; ring.style.setProperty('--ld', Math.round(126 * (1 - frac))); }
+    }
+    clearTimeout(watchdog);
+    ring.style.setProperty('--ld', 0);
+    video.src = URL.createObjectURL(new Blob(chunks, { type: 'video/mp4' }));
+    video.load();
+    video.addEventListener('canplay', () => {
+      requestSeek(heroProgress() * video.duration);
+      stage.classList.add('video-ready');
+    }, { once: true });
+  }
+  let failed = false;
+  function failVideo() {
+    if (failed) return; failed = true;
+    stage.classList.add('video-failed');
+    const cue = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    cue.setAttribute('viewBox', '0 0 24 24'); cue.setAttribute('class', 'cue'); cue.setAttribute('aria-hidden', 'true');
+    cue.innerHTML = '<path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>';
+    if (ring.isConnected) ring.replaceWith(cue);
+    // sem vídeo, a jornada usa o quadro final composto, que é a foto real do prato
+    posterLayer.style.backgroundImage = "url('assets/video/hero-ending.jpg')";
+  }
+
+  // rampa única de carregamento da faixa 1 (abre já montada)
+  function runLoadRamp() {
+    const t0 = performance.now();
+    const step = now => {
+      loadK = clamp((now - t0) / 2200, 0, 1);
+      updateCaptions(shown);
+      if (loadK < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  // os cinco portões, vivos (idênticos ao CSS)
+  const GATES = [
+    '(max-width: 720px)',
+    '(orientation: portrait) and (max-width: 1024px)',
+    '(orientation: portrait) and (pointer: coarse)',
+    '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
+    '(prefers-reduced-motion: reduce)'
+  ];
+  let scrubOn = false, rampDone = false;
+  function enableScrub() {
+    if (scrubOn) return; scrubOn = true;
+    initHeroOnce();
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', onScroll, { passive: true });
+    bands.forEach(b => { b.op = -1; b.k = -1; b.vis = null; });
+    shown = target = heroProgress();
+    updateCaptions(shown);
+    if (!rampDone) { rampDone = true; runLoadRamp(); }
+    onScroll();
+  }
+  function disableScrub() {
+    if (!scrubOn) return; scrubOn = false;
+    removeEventListener('scroll', onScroll); removeEventListener('resize', onScroll);
+    if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; lastTick = 0; }
+  }
+  function applyHeroMode() { if (GATES.some(q => matchMedia(q).matches)) disableScrub(); else enableScrub(); }
+  const MQLS = GATES.map(q => matchMedia(q));
+  MQLS.forEach(m => m.addEventListener('change', applyHeroMode));
+  applyHeroMode();
+
+  // ---------- navegação sólida depois da abertura
+  const nav = $('#nav');
+  const navCheck = () => {
+    const heroEl = scrubOn ? hero : $('.hero-static');
+    const solid = heroEl.getBoundingClientRect().bottom < 90;
+    if (solid !== nav.classList.contains('solid')) nav.classList.toggle('solid', solid);
+  };
+  addEventListener('scroll', navCheck, { passive: true }); navCheck();
+
+  // ---------- entradas coreografadas
+  const counters = $$('.count');
+  function runCounter(el) {
+    const to = +el.dataset.to; const t0 = performance.now();
+    if (reduceMQ.matches) { el.textContent = to; return; }
+    const step = now => { const t = clamp((now - t0) / 1400, 0, 1); el.textContent = Math.round(to * (1 - Math.pow(1 - t, 3))); if (t < 1) requestAnimationFrame(step); };
+    el.textContent = 0; requestAnimationFrame(step);
+  }
+  const revealIO = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const sec = e.target; revealIO.unobserve(sec);
+    sec.classList.add('in');
+    $$('.count', sec).forEach(runCounter);
+    setTimeout(() => sec.classList.add('settled'), 1900);
+  }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  $$('.reveal').forEach(s => revealIO.observe(s));
+
+  // pausa animações em loop fora da tela e com a aba escondida
+  const loopIO = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('offscreen', !e.isIntersecting)));
+  $$('section').forEach(s => loopIO.observe(s));
+  document.addEventListener('visibilitychange', () => document.body.classList.toggle('paused', document.hidden));
+
+  // ---------- a flor que desabrocha (o momento interativo)
+  const florBtn = $('#florBtn'), florDone = $('#florDone'), florHint = $('#florHint');
+  const petals = $$('.petal', florBtn), leaves = $$('.leaf', florBtn);
+  const momItems = $$('.mom-list li');
+  const progCircle = $('.prog .fill', florBtn);
+  let hp = 0, holding = false, hRaf = null, hLast = 0, florComplete = false, pinnedFlor = false;
+  function renderFlor() {
+    petals.forEach((p, i) => {
+      const s = clamp((hp - i * 0.15) / 0.3, 0, 1);
+      const e = 1 - Math.pow(1 - s, 3);
+      p.setAttribute('transform', 'rotate(' + ((1 - e) * -28).toFixed(2) + ') scale(' + (0.34 + 0.66 * e).toFixed(3) + ')');
+      p.style.opacity = (0.55 + 0.45 * e).toFixed(3);
+      const li = momItems.find(x => +x.dataset.m === i);
+      const on = s >= 0.98;
+      if (li && on !== li.classList.contains('on')) li.classList.toggle('on', on);
+    });
+    const le = clamp((hp - 0.55) / 0.45, 0, 1);
+    leaves.forEach(l => { l.setAttribute('transform', 'scale(' + (0.5 + 0.5 * le).toFixed(3) + ')'); l.style.opacity = (0.3 + 0.7 * le).toFixed(3); });
+    progCircle.style.setProperty('--po', (1 - hp).toFixed(3));
+  }
+  function florLoop(now) {
+    const dt = Math.min(64, now - (hLast || now)); hLast = now;
+    if (!florComplete) hp = clamp(hp + (holding ? dt / 2400 : -dt / 1500), 0, 1);
+    renderFlor();
+    if (hp >= 1 && !florComplete) completeFlor();
+    if (!florComplete && (holding || hp > 0)) hRaf = requestAnimationFrame(florLoop);
+    else { hRaf = null; hLast = 0; }
+  }
+  function kick() { if (hRaf === null) hRaf = requestAnimationFrame(florLoop); }
+  function completeFlor() {
+    florComplete = true; hp = 1; renderFlor();
+    florDone.classList.add('on'); $('a', florDone).removeAttribute('tabindex');
+    florHint.textContent = 'Os cinco momentos estão abertos';
+  }
+  function resetFlor() {
+    florComplete = false; hp = 0; renderFlor();
+    florDone.classList.remove('on'); $('a', florDone).setAttribute('tabindex', '-1');
+    florHint.textContent = 'Pressione e segure a flor';
+  }
+  const startHold = e => { if (florComplete) return; holding = true; if (e.pointerId !== undefined) florBtn.setPointerCapture(e.pointerId); kick(); };
+  const endHold = () => { holding = false; kick(); };
+  florBtn.addEventListener('pointerdown', startHold);
+  florBtn.addEventListener('pointerup', endHold);
+  florBtn.addEventListener('pointercancel', endHold);
+  florBtn.addEventListener('lostpointercapture', endHold);
+  florBtn.addEventListener('contextmenu', e => e.preventDefault());
+  florBtn.addEventListener('keydown', e => { if ((e.key === ' ' || e.key === 'Enter') && !e.repeat) { e.preventDefault(); startHold(e); } });
+  florBtn.addEventListener('keyup', e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); endHold(); } });
+  renderFlor();
+
+  // ---------- filme: só toca quando o visitante pede
+  const filme = $('#filmeVideo'), filmePlay = $('#filmePlay');
+  filmePlay.addEventListener('click', () => {
+    filme.controls = true;
+    filme.closest('.player').classList.add('playing');
+    const p = filme.play(); if (p && p.catch) p.catch(() => {});
+    filme.focus({ preventScroll: true });
+  });
+  filme.addEventListener('ended', () => { filme.closest('.player').classList.remove('playing'); filme.controls = false; filme.load(); });
+
+  // ---------- perguntas (abre com easing)
+  $$('.q button').forEach(btn => btn.addEventListener('click', () => {
+    const q = btn.closest('.q'); const open = !q.classList.contains('open');
+    q.classList.toggle('open', open); btn.setAttribute('aria-expanded', open);
+  }));
+
+  // ---------- aberto agora (horário da Bahia)
+  const HOURS = {
+    jacobina: [[[1, 2, 3, 4, 5], 690, 870], [[0, 1, 2, 3, 4, 5, 6], 1080, 1380]],
+    capim: [[[0, 2, 3, 4, 5, 6], 1080, 1380]]
+  };
+  function bahiaNow() {
+    const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Bahia', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+    const get = t => parts.find(p => p.type === t).value;
+    const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
+    return { day, min: (+get('hour') % 24) * 60 + +get('minute') };
+  }
+  function updateStatus() {
+    let now; try { now = bahiaNow(); } catch (e) { return; }
+    $$('.unit').forEach(u => {
+      const slots = HOURS[u.dataset.unit];
+      const open = slots.find(([d, a, b]) => d.includes(now.day) && now.min >= a && now.min < b);
+      const st = $('.status', u), label = $('.st', u);
+      st.classList.toggle('open', !!open);
+      const txt = open ? 'Aberto agora · até ' + (open[2] / 60 | 0) + 'h' + (open[2] % 60 ? String(open[2] % 60).padStart(2, '0') : '') : 'Fechado agora';
+      if (label.textContent !== txt) label.textContent = txt;
+    });
+  }
+  updateStatus(); setInterval(updateStatus, 60000);
+
+  // ---------- movimento reduzido ao vivo, nas duas direções
+  function pinToFinalStates() {
+    $$('.reveal').forEach(s => s.classList.add('in', 'settled'));
+    counters.forEach(c => c.textContent = c.dataset.to);
+    if (!florComplete) { pinnedFlor = true; completeFlor(); }
+    holding = false; if (hRaf !== null) { cancelAnimationFrame(hRaf); hRaf = null; hLast = 0; }
+  }
+  function unpinFinalStates() { if (pinnedFlor) { pinnedFlor = false; resetFlor(); } }
+  if (reduceMQ.matches) pinToFinalStates();
+  reduceMQ.addEventListener('change', e => { if (e.matches) pinToFinalStates(); else { unpinFinalStates(); applyHeroMode(); } });
+})();
+</script>
+</body>
+</html>
