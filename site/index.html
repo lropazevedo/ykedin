@@ -136,7 +136,7 @@ section{position:relative}
 .light{background:var(--sand);color:var(--ink)}
 .light .label{color:var(--sakura-ink)}
 .dark .label{color:#e7a2a2}
-.sec{padding:clamp(88px,12vw,150px) 0}
+.sec{padding:clamp(56px,7vw,96px) 0}
 .h2{margin:0;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:1.02;font-size:clamp(2rem,4.4vw,3.7rem)}
 .h2 em{color:var(--accent);font-size:1.06em}
 .dark .h2 em{color:#e39a9a}
@@ -168,7 +168,7 @@ section{position:relative}
 .ph-premio figcaption{text-align:right}
 .dez{display:flex;align-items:baseline;gap:14px;margin:0 0 18px;font-family:var(--serif);font-style:italic;color:var(--accent);font-size:clamp(4rem,7vw,6.4rem);line-height:.9}
 .dez small{font-family:var(--sans);font-style:normal;font-size:.74rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
-.marcos{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(64px,8vw,100px);color:var(--line-light)}
+.marcos{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(40px,5vw,64px);color:var(--line-light)}
 .marco{padding:26px 26px 30px 0}
 .marco .ic{display:block;width:46px;height:46px;margin:0 0 14px;fill:none;stroke:var(--accent);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .marco .ic path{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s var(--ease-io);transition-delay:calc(var(--i,0)*140ms + 200ms)}
@@ -236,10 +236,10 @@ section{position:relative}
 .flor-done p{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,2.6vw,2.2rem);margin:0 0 16px}
 
 /* delivery */
-.deliv{display:grid;grid-template-columns:1fr 1fr;min-height:640px}
+.deliv{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
 .deliv-photo{position:relative;overflow:hidden;background:#111}
 .deliv-photo img{width:100%;height:100%;object-fit:cover}
-.deliv-text{padding:clamp(64px,8vw,120px) clamp(24px,6vw,96px)}
+.deliv-text{padding:clamp(48px,6vw,88px) clamp(24px,6vw,96px)}
 .deliv-text .h2{margin:14px 0 22px}
 .steps{list-style:none;margin:36px 0 38px;padding:0;color:var(--line-light)}
 .steps li{display:grid;grid-template-columns:44px 1fr;gap:6px 14px;padding:18px 0;align-items:baseline}
@@ -290,7 +290,7 @@ section{position:relative}
 .q .a p{margin:0 0 24px;color:var(--ink-2);max-width:60ch}
 
 /* fechamento */
-.final{padding:clamp(100px,12vw,160px) 0}
+.final{padding:clamp(64px,8vw,104px) 0}
 .final-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(36px,7vw,110px);align-items:center}
 .final-photo{margin:0}
 .final-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:4px}
@@ -444,7 +444,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
         <figure class="dish d-big rv" style="--i:1"><img src="assets/fotos/marimai-800.webp" srcset="assets/fotos/marimai-800.webp 800w, assets/fotos/marimai-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 50vw" decoding="async" alt="MariMai: fatias de salmão na pedra de sal com vinagrete, pérolas e cebolinha" loading="lazy" width="1600" height="1066"><figcaption><b>MariMai</b><span>Salmão na pedra de sal com vinagrete e pérolas.</span></figcaption></figure>
         <figure class="dish rv" style="--i:2"><img src="assets/fotos/deniskroc-800.webp" srcset="assets/fotos/deniskroc-800.webp 800w, assets/fotos/deniskroc-1600.webp 1600w" sizes="(max-width: 560px) 50vw, (max-width: 980px) 50vw, 25vw" decoding="async" alt="DenisKroc: camarão empanado com molho verde e cebolinha" loading="lazy" width="1600" height="1066"><figcaption><b>DenisKroc</b><span>Camarão empanado com molho verde.</span></figcaption></figure>
         <figure class="dish rv" style="--i:3"><img src="assets/fotos/macaricado-800.webp" srcset="assets/fotos/macaricado-800.webp 800w, assets/fotos/macaricado-1600.webp 1600w" sizes="(max-width: 560px) 50vw, (max-width: 980px) 50vw, 25vw" decoding="async" alt="Salmão maçaricado com azeite e molho escuro" loading="lazy" width="1600" height="1066"><figcaption><b>Salmão maçaricado</b><span>Com azeite e o molho da casa.</span></figcaption></figure>
-        <figure class="dish rv" style="--i:4"><img src="assets/fotos/jo-kani-800.webp" srcset="assets/fotos/jo-kani-800.webp 800w, assets/fotos/jo-kani-1600.webp 1600w" sizes="(max-width: 560px) 50vw, (max-width: 980px) 50vw, 25vw" decoding="async" alt="Jôs de salmão cobertos de kani em prato azul de cerâmica" loading="lazy" width="1600" height="1066"><figcaption><b>Jô com kani</b><span>Salmão enrolado e kani por cima.</span></figcaption></figure>
+        <figure class="dish rv" style="--i:4"><img src="assets/fotos/jo-kani-800.webp" srcset="assets/fotos/jo-kani-800.webp 800w, assets/fotos/jo-kani-1600.webp 1600w" sizes="(max-width: 560px) 50vw, (max-width: 980px) 50vw, 25vw" decoding="async" alt="Dyo de Kani: peças de salmão cobertas de kani em prato azul de cerâmica" loading="lazy" width="1600" height="1066"><figcaption><b>Dyo de Kani</b><span>Salmão enrolado e kani por cima.</span></figcaption></figure>
         <figure class="dish rv" style="--i:5"><img src="assets/fotos/hot-800.webp" srcset="assets/fotos/hot-800.webp 800w, assets/fotos/hot-1600.webp 1600w" sizes="(max-width: 560px) 50vw, (max-width: 980px) 50vw, 25vw" decoding="async" alt="Tábua redonda com hots variados, cream cheese e crispy" loading="lazy" width="1600" height="1066"><figcaption><b>Hots da casa</b><span>Para quem gosta de crocante.</span></figcaption></figure>
         <figure class="dish d-wide rv" style="--i:6"><img src="assets/fotos/grelhado-800.webp" srcset="assets/fotos/grelhado-800.webp 800w, assets/fotos/grelhado-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 50vw" decoding="async" alt="Salmão selado na chapa sobre legumes salteados" loading="lazy" width="1600" height="1066"><figcaption><b>Salmão selado na chapa</b><span>Com legumes salteados.</span></figcaption></figure>
         <figure class="dish d-big rv" style="--i:7"><img src="assets/fotos/temaki-flambado-800.webp" srcset="assets/fotos/temaki-flambado-800.webp 800w, assets/fotos/temaki-flambado-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 50vw" decoding="async" alt="Temaki Flambado: salmão flambado com molho tarê e cebolinha sobre ardósia" loading="lazy" width="1600" height="1066"><figcaption><b>Temaki Flambado</b><span>Salmão flambado com tarê e cebolinha.</span></figcaption></figure>
