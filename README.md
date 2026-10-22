@@ -18,4 +18,4 @@ Depois abra http://localhost:5173 no navegador. Dar dois cliques no `index.html`
 
 ## Publicar
 
-Suba o conteúdo de `site/` para a raiz da hospedagem (por exemplo, `public_html` na HostGator). Antes, troque as URLs de `og:image` e `og:url` marcadas com `DEPLOY STEP` no `index.html` pelo endereço do site no ar.
+Suba o conteúdo de `site/` para a raiz da hospedagem (por exemplo, `public_html` na HostGator). O site está no ar em https://www.grupoykedin.com.br, publicado pela Vercel a cada envio ao GitHub. Se o domínio mudar, troque as URLs marcadas com `DEPLOY STEP` no `index.html`, o `robots.txt`, o `sitemap.xml` e o redirecionamento do `vercel.json`.
