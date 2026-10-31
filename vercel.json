@@ -14,5 +14,40 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.grupoykedin.com.br"
+        }
+      ],
+      "destination": "https://www.ykedin.com.br/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "grupoykedin.com.br"
+        }
+      ],
+      "destination": "https://www.ykedin.com.br/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ykedin.vercel.app"
+        }
+      ],
+      "destination": "https://www.ykedin.com.br/$1",
+      "permanent": true
+    }
   ]
 }
